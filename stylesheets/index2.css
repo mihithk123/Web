@@ -230,7 +230,7 @@ figure {
 }
 
 
-
+/* slider timer*/
 @keyframes slide {
     0% {
         left: 0;
@@ -318,11 +318,14 @@ figure {
         display: none;
     }
 
-    .intro-img{
+    .intro-img {
         display: none;
     }
 
-    
+    .introduction{
+        text-align: center;
+        margin-top: -250px;
+    }
 
 
 }
