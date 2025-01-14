@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Titillium+Web:wght@900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+:root {
+    --font-family: 'Titillium Web', sans-serif;
+    --main-color: #f0efef;
+    --m: 4rem;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url();
+    background: linear-gradient(to bottom, #091838 23%, #330c43 95%);
+    box-shadow: 0px 50px 50px #330c43;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(10px);
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    top: 0;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.navbar .logo a {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navbar .links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+}
+
+.navbar .links a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 0;
+    transition: 0.2s ease;
+}
+
+
+.navbar  {
+
+    padding: 10px 20px;
+    border-radius: 0.375rem;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+
+#menu-toggle {
+    display: none;
+}
+
+#hamburger-btn {
+    font-size: 1.8rem;
+    color: #faf8f8;
+    cursor: pointer;
+    display: none;
+    order: 1;
+}
+
+
+
+
+.slider {
+    width:100%;
+    height: 50em;
+    overflow: hidden;
+    grid-row: 1/2;
+    margin-top: 30px;
+
+}
+
+figure {
+    position: relative;
+    top: 60px;
+    left: 0;
+    width: 400%;
+    animation: 20s slide infinite;
+}
+
+.slide,
+.slide2 {
+    position: relative;
+    width: 25%;
+    float: left;
+}
+
+.slide h1 {
+    position: absolute;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    margin-top: 520px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+.Home {
+    position: relative;
+    align-items: center;
+    
+}
+
+#Home {
+    display: flex;
+    grid-row: 2/3;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+   
+}
+
+.home-img {
+    position: relative;
+}
+
+
+.home-text h1 {
+
+
+    font-size: 3.6em;
+    margin: 15px 0 15px;
+    color: #fff;
+
+
+}
+
+.home-text h6 {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+
+}
+
+.home-text p {
+    color: #ffffff;
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin-bottom: 48px;
+
+}
+
+#introduction2 {
+
+    grid-row: 3/4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    top: 70px;
+    margin-top: 200px;
+
+}
+
+.introduction p ,li {
+    text-align: justify;
+    color: #ffffff;
+
+
+}
+
+.introduction h5 {
+    text-align: left;
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 650;
+    margin-bottom: 10px;
+    margin-top: 120px;
+    position: relative;
+    bottom: 10px;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+
+}
+
+
+
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+
+    10% {
+        left: 0;
+    }
+
+    20% {
+        left: -100%;
+    }
+
+    30% {
+        left: -100%;
+    }
+
+    40% {
+        left: -200%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    55% {
+        left: -300%;
+    }
+
+    65% {
+        left: -300%;
+    }
+
+    66% {
+        left: -200%;
+    }
+
+    74% {
+        left: -200%;
+    }
+
+    75% {
+        left: -100%;
+    }
+
+    85% {
+        left: -100%;
+    }
+
+    90% {
+        left: 0;
+    }
+
+    1000% {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar .logo a {
+        font-size: 1.5rem;
+    }
+
+    .links {
+        position: fixed;
+        left: -100%;
+        top: 75px;
+        width: 100%;
+        height: 60vh;
+        padding-top: 20px;
+        background: #010a3196;
+        flex-direction: column;
+        transition: 0.3s ease;
+    }
+
+    .navbar #menu-toggle:checked~.links {
+        left: 0;
+    }
+
+    .navbar #hamburger-btn {
+        display: block;
+    }
+
+    .header .buttons {
+        display: none;
+    }
+
+    .intro-img{
+        display: none;
+    }
+
+    
+
+
+}
