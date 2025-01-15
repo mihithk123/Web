@@ -32,7 +32,7 @@ body {
     align-items: center;
 }
 
-
+/*Header Start*/
 .header {
     position: fixed;
     top: 0;
@@ -102,10 +102,10 @@ main {
     display: none;
     order: 1;
 }
+/*Header End*/
 
 
-
-
+/*Slider start*/
 .slider {
     width:100%;
     height: 50em;
@@ -144,7 +144,7 @@ figure {
     width: 100%;
     height: 500px;
 }
-
+/*Slider end*/
 
 
 .Home {
@@ -230,7 +230,7 @@ figure {
 }
 
 
-
+/*feedback start*/
 
 .feedbacks {
     display: flex;
@@ -272,7 +272,10 @@ figure {
     }
 }
 
+/*feedback end*/
 
+
+/*feedback start*/
 .features {
     display: flex;
     justify-content: space-around;
@@ -328,7 +331,7 @@ figure {
         margin-top: 10px;
     }
 }
-
+/*feedback end*/
 
 /* slider timer*/
 @keyframes slide {
@@ -443,3 +446,7 @@ figure {
         margin-top: 100px;
     }
 }
+
+.html {
+    scroll-behavior: smooth;
+  }

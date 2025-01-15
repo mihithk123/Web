@@ -271,8 +271,8 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
-    color: #333;
+    font-size: 27px;
+    color: #ea0707;
     cursor: pointer;
 }
 

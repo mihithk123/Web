@@ -105,6 +105,8 @@ main {
 }
 /* End Nav*/
 
+
+/*Hover start*/ 
 .hero-section {
   display: flex;
   justify-content: space-evenly;
@@ -262,7 +264,7 @@ main {
   font-size: 11px;
   color: #fff;
   font-weight: 500;
-  transition: 0.2 linear;
+  transition: .2 linear;
   margin-right: 2px;
 }
 
@@ -329,7 +331,7 @@ main {
 .fcard:hover .fhovercont {
   left: 50%;
 }
-
+/*Hover end*/ 
 
 @media screen and (max-width: 1023px) {
   .navbar .logo a {
@@ -369,3 +371,5 @@ main {
     display: none;
   }
 }
+
+
