@@ -230,6 +230,106 @@ figure {
 }
 
 
+
+
+.feedbacks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top:50px ;
+}
+.feedback-card {
+    background-color: #8d8d97;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    height: 340px;
+    text-align: left;
+}
+.feedback-card img {
+    width: 100%;
+    border-radius: 50%;
+}
+.feedback-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+.feedback-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.feedback-card .time {
+    font-size: 12px;
+    color: #aaa;
+}
+@media (max-width: 600px) {
+   
+    .feedbacks {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0e2d50;
+    padding: 20px;
+    color: #fff;
+    flex-wrap: wrap;
+    margin-top: 80px
+}
+.feature-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+.feature-item i {
+    font-size: 2em;
+    color: #ff6600;
+}
+.feature-item h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+.feature-item p {
+    margin: 0;
+    color: #ccc;
+}
+.trustpilot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trustpilot img {
+    margin-left: 10px;
+}
+.trustpilot p {
+    margin: 0;
+    color: #ccc;
+}
+@media (max-width: 500px) {
+    .features {
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    .trustpilot {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .trustpilot img {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+
 /* slider timer*/
 @keyframes slide {
     0% {
@@ -328,4 +428,18 @@ figure {
     }
 
 
+}
+@media screen and (max-width: 768px) {
+    .home-text h1 {
+        font-size: 2.5em;
+    }
+    
+    .home-img img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #introduction2 {
+        margin-top: 100px;
+    }
 }
