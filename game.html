@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerGonzo</title>
-    <link rel="stylesheet" href="./stylesheets/game.css" .css">
+    <link rel="stylesheet" href="./stylesheets/game.css">
     <link rel="stylesheet" href="./stylesheets/footer.css">
     <link rel="icon" type="image/png" href="./img/icons8-game-48.png"/>
     <script src="game.js"></script>
@@ -44,7 +44,7 @@
 
 
         <!--Game Show Start-->
-        <div class="carousel">
+        <section class="carousel">
 
             <div class="video-container">
                 <video autoplay muted loop>
@@ -104,6 +104,12 @@
                         <h3>
                             MotoGP 24
                         </h3>
+                        <h3>
+                            
+                            Rs.3000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -147,6 +153,12 @@
                         <h3>
                             Minecraft
                         </h3>
+                        <h3>
+                            
+                            Rs.3000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -188,6 +200,12 @@
                         <h3>
                             FORZA HORIZON 6
                         </h3>
+                        <h3>
+                            
+                            Rs.3000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -228,6 +246,12 @@
                         <h3>
                             Silent Hill II
                         </h3>
+                        <h3>
+                            
+                            Rs.3000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -268,6 +292,12 @@
                         <h3>
                             The Forest
                         </h3>
+                        <h3>
+                            
+                            Rs.4600.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -306,6 +336,12 @@
                         <h3>
                             Red Dead Redemption II
                         </h3>
+                        <h3>
+                            
+                            Rs.6000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -345,6 +381,12 @@
                         <h3>
                             Kena: Bridge of Spirits
                         </h3>
+                        <h3>
+                            
+                            Rs.2000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -423,6 +465,12 @@
                         <h3>
                             Call of Duty III
                         </h3>
+                        <h3>
+                            
+                            Rs.3000.00
+                                  
+              
+                          </h3>
                     </div>
                 </div>
 
@@ -461,8 +509,19 @@
                         </div>
                         <h3>
                             FIFA 24
+                            
                         </h3>
+                        <h3>
+                            
+                          Rs.3000.00
+                                
+            
+                        </h3>
+
+
+                        
                     </div>
+                    
                 </div>
             </div>
 
@@ -499,7 +558,7 @@
             </div>
             <!-- End large pic-->
 
-        </div>
+        </section>
         <!--Game Show End-->
 
 
@@ -551,29 +610,7 @@
 
 
 
-    
-    <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-image');
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    showSlide(currentSlide);
-   </script>
 
 
 
