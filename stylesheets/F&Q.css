@@ -129,107 +129,84 @@ main {
 
 /* End Header Part*/
 
-
-/* Start Main Part*/
-
-/* Start old F&Q Part*/
-         
 .container {
-    text-align: center;
-}
-
-.faq-header {
-    margin-top: 90px;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    position: relative;
-    color: #eee;
-}
-
-.faq-header::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #e91e63;
-    margin: 10px auto 0;
-}
-
-.faq-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(211, 211, 211, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
 .faq-item {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 0;
     border-bottom: 1px solid #eee;
+    cursor: pointer;
+    width: 600px;
+   
 }
-
 .faq-item:last-child {
     border-bottom: none;
 }
-
-.faq-icon {
-    color: #f70b59;
-    font-size: 20px;
-    margin-right: 15px;
+.faq-item i {
+    color: #e63946;
+    margin-right: 10px;
 }
-
-.faq-text {
+.faq-item p {
+    margin: 0;
     font-size: 16px;
-    color: #131212;
 }
-
-/* END old F&Q Part*/
-
-/* Start Ask F&Q Part*/
-.form-section {
-    background-color: #fff;
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #555;
+}
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    width: 600px;
     padding: 20px;
-    border-radius: 8px;
+    background: #fff;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
 }
-
-.form-section form {
-    display: flex;
-    flex-direction: column;
+.form-container h2 {
+    margin-top: 0;
+    font-size: 24px;
 }
-
-.form-section label {
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
-
-.form-section input,
-.form-section textarea {
-    margin-bottom: 15px;
+.form-group input,
+.form-group textarea {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 16px;
 }
-
-.form-section button {
-    padding: 10px;
-    background-color: #007BFF;
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+.form-group button {
+    padding: 10px 20px;
+    background: #3a0ca3;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 16px;
 }
-
-.form-section button:hover {
-    background-color: #0fc6d3;
+.form-group button:hover {
+    background: #2a0a83;
 }
-/* End Ask F&Q Part*/
