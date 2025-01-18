@@ -11,8 +11,8 @@
 :root {
     --font-family: 'Titillium Web', sans-serif;
     --main-color: #f0efef;
-    --font-size:20px;
     --m: 4rem;
+    --font-size:20px;
 }
 
 body {
@@ -23,6 +23,10 @@ body {
     box-shadow: 0px 50px 60px #330c43;
 }
 
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
 
 .flex {
     display: flex;
@@ -37,7 +41,7 @@ body {
     width: 100%;
     z-index: 1000;
     background: transparent;
-    backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 main {
@@ -46,6 +50,7 @@ main {
     grid-template-rows: auto auto auto;
     padding: 10px;
 }
+
 .navbar {
     display: flex;
     align-items: center;
@@ -98,7 +103,144 @@ main {
     display: none;
     order: 1;
 }
-media screen and (max-width: 1023px) {
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  margin-top: 30px;
+  
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.header img {
+  width: 100%;
+  height: auto;
+}
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header-text h1 {
+  font-size: 3em;
+  margin: 0;
+}
+.header-text p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+
+
+/* Google map sart*/
+.container2 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #ffffff;
+}
+.info-section {
+  width: 45%;
+  margin-bottom: 20px;
+}
+.info-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.info-box {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.info-box i {
+  font-size: 24px;
+  margin-right: 20px;
+}
+.map-section {
+  width: 45%;
+}
+.map-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.map-container {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .info-section, .map-section {
+      width: 100%;
+  }
+}
+
+.services {
+  padding: 20px;
+}
+.services h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.service-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.service-card {
+  background-color: #cccdd3;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+.service-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.service-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.service-card p {
+  font-size: 1em;
+  color: #d30707;
+}
+@media (max-width: 768px) {
+  .header-text h1 {
+      font-size: 2em;
+  }
+  .header-text p {
+      font-size: 1em;
+  }
+  .service-card {
+      width: 90%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
   .navbar .logo a {
       font-size: 1.5rem;
   }
@@ -108,8 +250,8 @@ media screen and (max-width: 1023px) {
       left: -100%;
       top: 75px;
       width: 100%;
-      height: 100vh;
-      padding-top: 50px;
+      height: 60vh;
+      padding-top: 20px;
       background: #010a3196;
       flex-direction: column;
       transition: 0.3s ease;
@@ -126,6 +268,34 @@ media screen and (max-width: 1023px) {
   .header .buttons {
       display: none;
   }
-
-
 }
+
+.hours-table,h1 {
+  width: 100%;
+  border-collapse: collapse;
+  color: #faf8f8;
+}
+
+.hours-table th,
+.hours-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.hours-table th {
+  background-color: #ff4500;
+}
+
+.hours-table td {
+  background-color: #0e1357;
+}
+
+.hours-table th,
+.hours-table td {
+  border: 1px solid #444;
+}
+
+
+
+
+
