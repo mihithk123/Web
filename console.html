@@ -45,7 +45,7 @@
 
 
     <!-- Console Slider start -->
-    <div class="container">
+    <section class="container">
       <div class="carousel">
         <img alt="Carousel image 1" class="carousel-image" src="./img/astro_bot_logo_katros_banner.png" />
         
@@ -401,14 +401,14 @@
         </div>
       </div>
       <!--CONSOLE GAMES End-->
+    </section>
 
 
 
 
 
 
-
-      <!-- Start Footer-->
+    <!-- Start Footer-->
       <footer class="footer">
         <div class="footer-container">
           <div class="footer-column">
@@ -457,31 +457,10 @@
 
 
   </main>
-
+  <script src="./Js/console.js"></script>
 </body>
 
 
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.carousel-image');
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
-    });
-  }
-
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  }
-
-  showSlide(currentSlide);
-</script>
 
 </html>
