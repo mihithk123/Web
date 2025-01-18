@@ -12,7 +12,7 @@
     --font-family: 'Titillium Web', sans-serif;
     --main-color: #f0efef;
     --m: 4rem;
-    --font-size:20px;
+    --font-size: 20px;
 }
 
 body {
@@ -46,7 +46,7 @@ main {
     width: 100%;
     z-index: 1000;
     background: transparent;
-  backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 
@@ -82,15 +82,13 @@ main {
     transition: 0.2s ease;
 }
 
-
-.navbar  {
+.navbar {
 
     padding: 10px 20px;
     border-radius: 0.375rem;
     text-align: center;
     transition: 0.2s ease;
 }
-
 
 #menu-toggle {
     display: none;
@@ -242,14 +240,19 @@ main {
     display: block;
 }
 
+
+
+
+
+
+
+
 .container {
     width: 90%;
     margin: 0 auto;
     margin-top: 90px;
     grid-row: 1/2;
 }
-
-
 
 .header h1 {
     margin: 0;

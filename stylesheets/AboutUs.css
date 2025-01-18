@@ -82,7 +82,6 @@ main {
     transition: 0.2s ease;
 }
 
-
 .navbar  {
 
     padding: 10px 20px;
@@ -90,7 +89,6 @@ main {
     text-align: center;
     transition: 0.2s ease;
 }
-
 
 #menu-toggle {
     display: none;
@@ -103,7 +101,11 @@ main {
     display: none;
     order: 1;
 }
+    
 
+
+
+/* start video*/
 .video-container {
   position: relative;
   width: 100%;
@@ -140,6 +142,7 @@ main {
   font-size: 1.2em;
   margin: 0;
 }
+
 
 
 
@@ -196,6 +199,34 @@ iframe {
   }
 }
 
+/* Time Table */
+.hours-table,h1 {
+  width: 100%;
+  border-collapse: collapse;
+  color: #faf8f8;
+}
+
+.hours-table th,
+.hours-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.hours-table th {
+  background-color: #ff4500;
+}
+
+.hours-table td {
+  background-color: #0e1357;
+}
+
+.hours-table th,
+.hours-table td {
+  border: 1px solid #444;
+}
+
+
+/* about the brances*/
 .services {
   padding: 20px;
 }
@@ -240,6 +271,9 @@ iframe {
   }
 }
 
+
+
+/* responsice*/
 @media screen and (max-width: 1023px) {
   .navbar .logo a {
       font-size: 1.5rem;
@@ -270,30 +304,8 @@ iframe {
   }
 }
 
-.hours-table,h1 {
-  width: 100%;
-  border-collapse: collapse;
-  color: #faf8f8;
-}
 
-.hours-table th,
-.hours-table td {
-  padding: 10px;
-  text-align: left;
-}
 
-.hours-table th {
-  background-color: #ff4500;
-}
-
-.hours-table td {
-  background-color: #0e1357;
-}
-
-.hours-table th,
-.hours-table td {
-  border: 1px solid #444;
-}
 
 
 
