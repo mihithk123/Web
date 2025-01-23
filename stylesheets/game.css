@@ -148,12 +148,14 @@ main {
 }
 
 .card {
-    background-color: #dbdce1;
+    background-color: #fdfdfd;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
     transition: transform 0.3s;
     top: 80px;
+    width: 350px;
+    height: 500px;
 }
 
 .card:hover {
