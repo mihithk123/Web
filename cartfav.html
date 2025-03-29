@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./stylesheets/F&Q.css">
     <link rel="stylesheet" href="./stylesheets/footer.css">
-   
     <link rel="icon" type="image/png" href="./img/icons8-game-48.png"/>
+     <link rel="stylesheet" href="./stylesheets/footer.css">
+    
     
     <title>GamerGonzo</title>
 </head>
@@ -66,53 +67,87 @@
         <!--Header End-->
 
 
-        <section class="container">
-            <div class="faq-item">
-                <i class="fas fa-question-circle"></i>
-                <p>How to Download?</p>
+
+        <!-- Main cart container -->
+    <div class="cart-container">
+        <!-- Cart header with title -->
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+        </div>
+        
+        <!-- Cart content area -->
+        <div class="cart-content">
+            <!-- Empty cart message (hidden by default, shown via JS when cart is empty) -->
+            <div class="empty-cart" id="emptyCart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Your cart is empty</p>
+                <button class="continue-shopping">Continue Shopping</button>
             </div>
-            <div class="faq-answer">You can download the application from our official website.</div>
-            <div class="faq-item">
-                <i class="fas fa-question-circle"></i>
-                <p>Do you have any offers?</p>
+            
+            <!-- Cart with items (shown by default, hidden via JS when cart is empty) -->
+            <div class="cart-with-items" id="cartWithItems">
+                <!-- Cart items table -->
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th></th> <!-- Empty header for remove button column -->
+                        </tr>
+                    </thead>
+                    <tbody id="cartItems">
+                        <!-- Cart items will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+                
+                <!-- Cart summary section -->
+                <div class="cart-summary">
+                    <!-- Subtotal row -->
+                    <div class="summary-row">
+                        <span class="summary-label">Subtotal</span>
+                        <span class="summary-value" id="subtotal">$0.00</span>
+                    </div>
+                    <!-- Shipping row -->
+                    <div class="summary-row">
+                        <span class="summary-label">Shipping</span>
+                        <span class="summary-value">Free</span>
+                    </div>
+                    <!-- Total row -->
+                    <div class="summary-total">
+                        <span class="total-label">Total</span>
+                        <span class="total-value" id="total">$0.00</span>
+                    </div>
+                </div>
+                
+                <!-- Checkout button container -->
+                <div class="checkout-btn-container">
+                    <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+                </div>
             </div>
-            <div class="faq-answer">Yes, we have seasonal offers. Please check our offers page for more details.</div>
-            <div class="faq-item">
-                <i class="fas fa-question-circle"></i>
-                <p>Why do we use it?</p>
-            </div>
-            <div class="faq-answer">Our application helps you manage your tasks efficiently.</div>
-            <div class="faq-item">
-                <i class="fas fa-question-circle"></i>
-                <p>Can we put our use things?</p>
-            </div>
-            <div class="faq-answer">Yes, you can customize the application to suit your needs.</div>
-            <div class="faq-item">
-                <i class="fas fa-question-circle"></i>
-                <p>Why do we use it?</p>
-            </div>
-            <div class="faq-answer">Our application helps you manage your tasks efficiently.</div>
-        </section>
+        </div>
+    </div>
 
 
-        <section class="form-container">
-            <h2>Ask a Question</h2>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="question">Question</label>
-                <textarea id="question" name="question"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit">Submit</button>
-            </div>
-        </section>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
