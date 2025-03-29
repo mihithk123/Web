@@ -2,7 +2,7 @@
     background: linear-gradient(to bottom, #0a1b3f 23%, #330c43 95%);
     color: white;
     padding: 40px 0;
-    grid-row: 3/4;
+    grid-row: 5/6;
 }
 .footer-container {
     display: flex;
