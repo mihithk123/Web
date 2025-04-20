@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./stylesheets/computer.css">
   <link rel="stylesheet" href="./stylesheets/cart.css">
   <link rel="stylesheet" href="./stylesheets/favorites.css">
+  <link rel="stylesheet" href="./stylesheets/cart-favorites.css">
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="./img/icons8-game-48.png" />
   <title>GamerGonzo</title>
@@ -16,24 +18,7 @@
 
 <body>
 
-  <div id="cart-panel">
-    <div class="cart-header">
-      <h2>Your Cart</h2>
-      <button id="close-cart"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="cart-items"></div>
-    <div class="cart-footer">
-      <div class="favorites-buttons">
-        <button id="save-favorites-btn">Add to Favourites</button>
-        <button id="apply-favorites-btn">Apply Favourites</button>
-      </div>
-      <div class="cart-total">Total: <span id="cart-total-amount">Rs. 0</span></div>
-      <a href="personal.html">
-        <button id="checkout-btn">BUY NOW</button>
-      </a>
-      <button id="clear-cart-btn">Clear Cart</button>
-    </div>
-  </div>
+  
   
   <main>
 
@@ -57,7 +42,7 @@
           <li><a href="./f&q.html">F&Q</a></li>
 
           <div class="cart-icon">
-            <a href="./cartfav.html">
+            <a href="./cart.html">
               <svg style=" margin-left: 70px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -65,7 +50,7 @@
               </svg>
             </a>
 
-            <a href="./cartfav.html">
+            <a href="./cart.html">
               <svg style=" margin-left: 20px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
 
@@ -669,4 +654,5 @@
 
   </main>
   <script src="./Js/shoping-cart.js"></script>
+  
 </body>

@@ -153,17 +153,22 @@
         </div>
     </div>
 
-    <!-- Add this after the details-title div in personal.html -->
+    <!-- Replace the order-summary div in personal.html with this: -->
 <div class="order-summary">
     <h2>Your Order Summary</h2>
     <div id="summary-items">
       <!-- Cart items will be displayed here -->
+      <p>Loading your cart items...</p>
     </div>
     <div class="summary-total">
       <strong>Total:</strong>
-      <span id="summary-total"></span>
+      <span id="summary-total">Rs. 0</span>
     </div>
   </div>
+  
+  <!-- At the bottom of personal.html, make sure these scripts are properly linked: -->
+  <script src="./Js/details.js"></script>
+  <script src="./Js/personal.js"></script>
 
     
 
