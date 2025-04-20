@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./stylesheets/personal.css">
+    <title>Personal & Delivery Details</title>
+</head>
+<body>
+    <div class="details-title">
+        <h1>Personal & Delivery Details</h1>
+    </div>
+    <div class="container">
+        <div class="details-form">
+            <svg version="1.1" id="detailsform" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 500"
+                style="enable-background:new 0 0 750 500;" xml:space="preserve">
+                <g id="Form">
+                    <g id="FormBackground">
+                        <g id="Page-1_1_">
+                            <g id="form_1_">
+                                <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v420c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                            C0,17.9,17.9,0,40,0z" />
+                            </g>
+                        </g>
+                        <path class="darkcolor greydark"
+                            d="M750,461V193.2c-217.6-57.5-556.4-13.5-750,24.9V461c0,22.1,17.9,40,40,40h670C732.1,501,750,483.1,750,461z" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="form-container">
+        <!-- Personal Details Section -->
+        <div class="section-header">
+            <h2>Personal Details</h2>
+        </div>
+        
+        <div class="field-container">
+            <label for="first-name">First Name</label>
+            <input id="first-name" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="email">Email Address</label>
+            <input id="email" type="email">
+        </div>
+        
+        <div class="field-container">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel">
+        </div>
+        
+        <!-- Delivery Address Section -->
+        <div class="section-header">
+            <h2>Delivery Address</h2>
+        </div>
+        
+        <div class="field-container">
+            <label for="address-line1">Address Line 1</label>
+            <input id="address-line1" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="address-line2">Address Line 2 (Optional)</label>
+            <input id="address-line2" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="city">City</label>
+            <input id="city" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="state">State/Province</label>
+            <input id="state" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="postal-code">ZIP/Postal Code</label>
+            <input id="postal-code" type="text">
+        </div>
+        
+        <div class="field-container">
+            <label for="country">Country</label>
+            <select id="country">
+                <option value="" selected disabled>Select a country</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="au">Australia</option>
+                <option value="fr">France</option>
+                <option value="de">Germany</option>
+                <option value="jp">Japan</option>
+            </select>
+        </div>
+        
+        <!-- Delivery Options Section -->
+        <div class="section-header">
+            <h2>Delivery Options</h2>
+        </div>
+        
+        <div class="field-container delivery-options">
+            <div class="option">
+                <input type="radio" id="standard" name="delivery" value="standard" checked>
+                <label for="standard">
+                    <div class="option-name">Standard Delivery</div>
+                    <div class="option-details">
+                        <span class="delivery-time">3-5 Business Days</span>
+                        <span class="delivery-cost">FREE</span>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="option">
+                <input type="radio" id="express" name="delivery" value="express">
+                <label for="express">
+                    <div class="option-name">Express Delivery</div>
+                    <div class="option-details">
+                        <span class="delivery-time">1-2 Business Days</span>
+                        <span class="delivery-cost">$9.99</span>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="option">
+                <input type="radio" id="overnight" name="delivery" value="overnight">
+                <label for="overnight">
+                    <div class="option-name">Next Day Delivery</div>
+                    <div class="option-details">
+                        <span class="delivery-time">Next Business Day</span>
+                        <span class="delivery-cost">$19.99</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+        
+        <div class="field-container">
+            <label for="delivery-notes">Delivery Notes (Optional)</label>
+            <textarea id="delivery-notes" placeholder="Add any special delivery instructions here..."></textarea>
+        </div>
+        
+        <div>
+            <a href="buynow.html">
+            <button class="button-77" role="button">Continue to Payment →</button>
+        </a>
+        </div>
+    </div>
+
+    <!-- Add this after the details-title div in personal.html -->
+<div class="order-summary">
+    <h2>Your Order Summary</h2>
+    <div id="summary-items">
+      <!-- Cart items will be displayed here -->
+    </div>
+    <div class="summary-total">
+      <strong>Total:</strong>
+      <span id="summary-total"></span>
+    </div>
+  </div>
+
+    
+
+
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submission
+            const continueButton = document.querySelector('.button-77');
+            continueButton.addEventListener('click', function() {
+                // Redirect to payment page
+                window.location.href = 'buynow.html';
+            });
+        });
+    </script>
+
+<a href="personal.html">
+    <button id="checkout-btn" >BUY NOW </button>
+  </a>
+  <script src="./Js/deatails.js"></script>
+  <script src="./Js/personal.js"></script>
+
+</body>
+</html>
+

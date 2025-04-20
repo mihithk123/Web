@@ -7,14 +7,34 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./stylesheets/footer.css">
   <link rel="stylesheet" href="./stylesheets/computer.css">
+  <link rel="stylesheet" href="./stylesheets/cart.css">
+  <link rel="stylesheet" href="./stylesheets/favorites.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="./img/icons8-game-48.png" />
   <title>GamerGonzo</title>
 </head>
 
 <body>
 
-
-
+  <div id="cart-panel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="favorites-buttons">
+        <button id="save-favorites-btn">Add to Favourites</button>
+        <button id="apply-favorites-btn">Apply Favourites</button>
+      </div>
+      <div class="cart-total">Total: <span id="cart-total-amount">Rs. 0</span></div>
+      <a href="personal.html">
+        <button id="checkout-btn">BUY NOW</button>
+      </a>
+      <button id="clear-cart-btn">Clear Cart</button>
+    </div>
+  </div>
+  
   <main>
 
     <!--Nav Strt-->
@@ -86,7 +106,6 @@
     </div>
 
     <section>
-
 
       <!-- New Products Start -->
       <div class="section-title">
@@ -221,7 +240,7 @@
           <button class="add-to-cart">
             Add To Cart
             <i class="fas fa-shopping-cart"></i>
-          </button>
+          </button>d
         </div>
         <div class="product-card">
           <div class="discount">-18%</div>
@@ -595,6 +614,8 @@
           </button>
         </div>
 
+        
+
 
 
       </div>
@@ -645,8 +666,7 @@
     </footer>
     <!-- End Footer-->
 
-  </main>
-  <script src="./Js/console.js"></script>
-</body>
 
-</html>
+  </main>
+  <script src="./Js/shoping-cart.js"></script>
+</body>
