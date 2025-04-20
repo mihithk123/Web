@@ -1,0 +1,41 @@
+/* favorites.css - Include this in your project */
+
+.favorites-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  #save-favorites-btn, #apply-favorites-btn {
+    flex: 1;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  #save-favorites-btn {
+    background-color: #4CAF50;
+  }
+  
+  #save-favorites-btn:hover {
+    background-color: #45a049;
+  }
+  
+  #apply-favorites-btn {
+    background-color: #2196F3;
+  }
+  
+  #apply-favorites-btn:hover {
+    background-color: #0b7dda;
+  }
+  
+  /* Make sure cart panel has enough space for the new buttons */
+  #cart-panel {
+    max-height: 80vh;
+    overflow-y: auto;
+  }

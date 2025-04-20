@@ -1,0 +1,478 @@
+/* Import Poppins font for consistency with payment page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary-gradient: linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+  --card-gradient: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+  --text-color: #f8f9fa;
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --input-border: rgba(255, 255, 255, 0.2);
+  --input-focus-border: rgba(255, 255, 255, 0.5);
+  --button-gradient: linear-gradient(92.83deg, #ff7426 0%, #f93a13 100%);
+  --button-hover-gradient: linear-gradient(92.83deg, #f93a13 0%, #ff7426 100%);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  --input-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Basic body styling - matching payment page */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background texture */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.03)" width="50" height="50" x="0" y="0" /><rect fill="rgba(255,255,255,0.03)" width="50" height="50" x="50" y="50" /></svg>');
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Title styling - matching payment page title */
+.details-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.details-title h1 {
+  font-weight: 600;
+  font-size: 2.8rem;
+  margin: 0;
+  background-image: linear-gradient(to right, #f8f9fa, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details-title h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  border-radius: 3px;
+}
+
+/* Container for the form visualization */
+.container {
+  width: 100%;
+  max-width: 450px;
+  max-height: 281px;
+  height: 54vw;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: none; /* Hide the SVG container initially */
+}
+
+/* Details form styling */
+.details-form {
+  width: 100%;
+  max-width: 450px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+/* SVG form background */
+#detailsform {
+  filter: drop-shadow(var(--card-shadow));
+}
+
+/* Colors for the SVG form */
+.details-form .lightcolor {
+  fill: rgba(255, 255, 255, 0.15);
+}
+
+.details-form .greydark {
+  fill: var(--card-gradient);
+}
+
+/* Form container styling */
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 650px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+/* Section header styling */
+.section-header {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.section-header:first-child {
+  margin-top: 0;
+}
+
+.section-header h2 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Field container styling */
+.field-container {
+  position: relative;
+}
+
+/* Field that should span both columns */
+.field-container.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Labels styling */
+label {
+  display: block;
+  padding-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Input fields styling */
+input, select, textarea {
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: var(--input-shadow);
+  transition: all 0.3s ease;
+}
+
+/* Textarea specific styling */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Input focus state */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Placeholder text styling */
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Select dropdown styling */
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+}
+
+/* Delivery options section styling */
+.delivery-options {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual option styling */
+.option {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom radio button styling */
+.option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.option label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.option input[type="radio"]:checked + label::before {
+  border-color: #ff7426;
+  background: #ff7426;
+  box-shadow: 0 0 0 2px rgba(255, 116, 38, 0.3);
+}
+
+.option input[type="radio"]:checked + label::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.option input[type="radio"]:checked + label {
+  background: rgba(255, 116, 38, 0.1);
+  border: 1px solid rgba(255, 116, 38, 0.4);
+}
+
+/* Option name styling */
+.option-name {
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 35px;
+  margin-bottom: 5px;
+}
+
+/* Option details styling */
+.option-details {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 35px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Delivery cost styling */
+.delivery-cost {
+  font-weight: 600;
+  color: #ff7426;
+}
+
+/* Button styling - matching payment page button */
+.button-77 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0;
+  min-height: 64px;
+  outline: none;
+  overflow: visible;
+  padding: 19px 36px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 300px;
+  word-break: keep-all;
+  z-index: 0;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 15px;
+}
+
+.button-77:before,
+.button-77:after {
+  border-radius: 12px;
+}
+
+.button-77:before {
+  background-color: rgba(249, 58, 19, 0.1);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.button-77:after {
+  background-image: var(--button-gradient);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 0.3s ease;
+  z-index: -1;
+  border-radius: 8px;
+}
+
+.button-77:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(249, 58, 19, 0.3);
+}
+
+.button-77:hover:not(:disabled):after {
+  background-image: var(--button-hover-gradient);
+}
+
+.button-77:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(249, 58, 19, 0.3);
+}
+
+.button-77:active:not(:disabled):after {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--button-gradient);
+}
+
+.button-77:disabled {
+  cursor: default;
+  opacity: 0.24;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  
+  .delivery-options {
+    grid-column: auto;
+  }
+  
+  .details-title h1 {
+    font-size: 2rem;
+  }
+  
+  .button-77 {
+    padding: 15px 26px;
+    min-height: 54px;
+  }
+}
+
+/* Animation for input focus effect */
+@keyframes focusAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apply animation to focused inputs */
+input:focus, select:focus, textarea:focus {
+  background-size: 200% 200%;
+  animation: focusAnimation 2s ease infinite;
+}
+
+
+/* Add this to your personal.css file */
+.order-summary {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.order-summary h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.summary-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.summary-item-title {
+  font-weight: bold;
+}
+
+.summary-item-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: #666;
+}
+
+.summary-total {
+  margin-top: 15px;
+  font-size: 18px;
+  text-align: right;
+}
