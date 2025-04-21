@@ -6,7 +6,9 @@ let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 function updateCartCount() {
   const cartCountElements = document.querySelectorAll('.cart-count');
   cartCountElements.forEach(element => {
-    element.textContent = cart.length;
+    // Show total quantity of all items in cart
+    const totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+    element.textContent = totalQuantity;
   });
 }
 
@@ -28,18 +30,37 @@ function addToCart(event) {
   // Extract numerical price (remove "Rs. " and convert to number)
   const priceValue = parseFloat(productPrice.replace('Rs. ', '').replace(',', ''));
   
-  const product = {
-    image: productImage,
-    name: productName,
-    price: priceValue,
-    formattedPrice: productPrice
-  };
+  // Check if item already exists in cart
+  const existingItem = cart.find(item => item.name === productName);
   
-  cart.push(product);
+  if (existingItem) {
+    // Increment quantity if item already exists
+    existingItem.quantity = (existingItem.quantity || 1) + 1;
+  } else {
+    // Add new item with quantity 1
+    const product = {
+      image: productImage,
+      name: productName,
+      price: priceValue,
+      formattedPrice: productPrice,
+      quantity: 1
+    };
+    cart.push(product);
+  }
+  
   saveCart();
   
   // Show confirmation message
   alert(`${productName} has been added to your cart!`);
+}
+
+// Update item quantity in cart
+function updateQuantity(index, newQuantity) {
+  if (newQuantity < 1) return; // Don't allow quantities less than 1
+  
+  cart[index].quantity = newQuantity;
+  saveCart();
+  displayCart();
 }
 
 // Remove item from cart
@@ -84,7 +105,7 @@ function applyFavorites() {
 
 // Calculate and display total cart value
 function calculateTotal() {
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
   const formattedTotal = `Rs. ${total.toLocaleString()}`;
   
   const totalElement = document.getElementById('cart-total');
@@ -93,6 +114,24 @@ function calculateTotal() {
   }
   
   return formattedTotal;
+}
+
+// Handle quantity change
+function handleQuantityChange(event, index) {
+  const newQuantity = parseInt(event.target.value);
+  if (!isNaN(newQuantity) && newQuantity >= 1) {
+    updateQuantity(index, newQuantity);
+  }
+}
+
+// Handle quantity button clicks
+function handleQuantityButton(index, change) {
+  const currentQuantity = cart[index].quantity || 1;
+  const newQuantity = currentQuantity + change;
+  
+  if (newQuantity >= 1) {
+    updateQuantity(index, newQuantity);
+  }
 }
 
 // Display cart items in the cart page
@@ -119,14 +158,33 @@ function displayCart() {
   cartTable.style.display = 'table';
   if (cartActions) cartActions.style.display = 'flex';
   
+  // Update table header to include quantity column
+  const thead = cartTable.querySelector('thead tr');
+  if (thead && thead.querySelectorAll('th').length === 4) {
+    // Insert quantity column header after price
+    const priceCell = thead.children[2];
+    const quantityHeader = document.createElement('th');
+    quantityHeader.textContent = 'Quantity';
+    thead.insertBefore(quantityHeader, priceCell.nextSibling);
+  }
+  
   // Add cart items to table
   cart.forEach((item, index) => {
     const row = document.createElement('tr');
+    
+    // Calculate item total
+    const itemTotal = item.price * (item.quantity || 1);
+    const formattedItemTotal = `Rs. ${itemTotal.toLocaleString()}`;
     
     row.innerHTML = `
       <td><img src="${item.image}" alt="${item.name}" class="cart-item-image"></td>
       <td>${item.name}</td>
       <td>${item.formattedPrice}</td>
+      <td class="quantity-cell">
+        <button class="quantity-btn minus" data-index="${index}">-</button>
+        <input type="number" min="1" value="${item.quantity || 1}" class="quantity-input" data-index="${index}">
+        <button class="quantity-btn plus" data-index="${index}">+</button>
+      </td>
       <td><button class="remove-item" data-index="${index}">Remove</button></td>
     `;
     
@@ -136,13 +194,29 @@ function displayCart() {
   // Calculate and display total
   calculateTotal();
   
-  // Add event listeners to remove buttons
+  // Add event listeners for quantity controls and remove buttons
+  const quantityInputs = tableBody.querySelectorAll('.quantity-input');
+  quantityInputs.forEach(input => {
+    const index = parseInt(input.getAttribute('data-index'));
+    input.addEventListener('change', (event) => handleQuantityChange(event, index));
+  });
+  
+  const minusButtons = tableBody.querySelectorAll('.quantity-btn.minus');
+  minusButtons.forEach(button => {
+    const index = parseInt(button.getAttribute('data-index'));
+    button.addEventListener('click', () => handleQuantityButton(index, -1));
+  });
+  
+  const plusButtons = tableBody.querySelectorAll('.quantity-btn.plus');
+  plusButtons.forEach(button => {
+    const index = parseInt(button.getAttribute('data-index'));
+    button.addEventListener('click', () => handleQuantityButton(index, 1));
+  });
+  
   const removeButtons = tableBody.querySelectorAll('.remove-item');
   removeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const index = parseInt(button.getAttribute('data-index'));
-      removeFromCart(index);
-    });
+    const index = parseInt(button.getAttribute('data-index'));
+    button.addEventListener('click', () => removeFromCart(index));
   });
 }
 
