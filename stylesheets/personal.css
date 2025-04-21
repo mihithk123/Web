@@ -549,3 +549,65 @@ input:focus, select:focus, textarea:focus {
 .checkout-btn:hover {
   background-color: #45a049;
 }
+
+
+/* Add these styles to personal.css */
+
+.order-summary {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h2 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.summary-item-title {
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.summary-item-details {
+  display: flex;
+  gap: 20px;
+}
+
+.summary-item-price {
+  font-weight: 500;
+  color: #2a59a4;
+}
+
+.summary-item-quantity {
+  color: #666;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #ddd;
+  font-size: 1.2rem;
+}
+
+#summary-total {
+  font-weight: 700;
+  color: #2a59a4;
+}

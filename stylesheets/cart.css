@@ -1,6 +1,9 @@
 /* Cart Page Styling */
 .cart-section {
   padding: 50px 20px;
+  background: linear-gradient(to bottom, #0a1738, #1a103b);
+  color: white;
+  min-height: 70vh;
 }
 
 .container {
@@ -11,13 +14,13 @@
 .cart-section h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #333;
+  color: white;
 }
 
 .empty-cart-message {
   text-align: center;
   padding: 40px 20px;
-  background-color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   margin-bottom: 20px;
   display: none;
@@ -25,7 +28,6 @@
 
 .empty-cart-message p {
   font-size: 18px;
-  color: #666;
   margin-bottom: 20px;
 }
 
@@ -49,53 +51,139 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   overflow: hidden;
+  background-color: transparent;
+  color: white;
 }
 
 .cart-table thead {
-  background-color: #333;
-  color: white;
+  background-color: white;
+  color: #333;
 }
 
-.cart-table th,
-.cart-table td {
+.cart-table th {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  font-weight: 600;
 }
 
-.cart-table tbody tr:hover {
-  background-color: #f5f5f5;
+.cart-table td {
+  padding: 25px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
+}
+
+/* Make quantity column properly sized */
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) {
+  width: 180px; /* Give enough space for the quantity controls */
+}
+
+/* Center quantity controls in the quantity column */
+.cart-table td:nth-child(2) {
+  text-align: center;
+}
+
+/* Ensure proper spacing between columns */
+.cart-table th, 
+.cart-table td {
+  padding: 15px;
 }
 
 .cart-item-image {
-  width: 80px;
+  width: 100px;
   height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
+  object-fit: contain;
 }
 
-.remove-item {
-  background-color: #ff6b6b;
+/* Quantity controls styling */
+.quantity-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the controls in the cell */
+  gap: 5px;
+  width: 100%; /* Ensure the cell takes full width */
+}
+
+.quantity-input {
+  width: 50px;
+  height: 35px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
   color: white;
-  border: none;
+  padding: 0 5px;
+  margin: 0 5px; /* Add some spacing around the input */
+}
+
+.quantity-input:focus {
+  outline: none;
+  border-color: #4b70e2;
+}
+
+/* Prevent number input arrows in some browsers */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-btn {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  padding: 8px 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.remove-item:hover {
-  background-color: #ff5252;
+.quantity-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
+.quantity-btn:active {
+  transform: scale(0.95);
+}
+
+.quantity-btn.minus {
+  color: white;
+}
+
+.quantity-btn.plus {
+  color: white;
+}
+
+/* Bottom separator line */
+.quantity-separator {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 15px 0;
+}
+
+/* Total row styling */
 .cart-table tfoot {
   font-weight: bold;
-  background-color: #f8f9fa;
+  background-color: white;
+  color: #333;
 }
 
+.cart-table tfoot td {
+  padding: 15px;
+  border: none;
+}
+
+/* Cart action buttons at bottom */
 .cart-actions {
   display: flex;
   justify-content: space-between;
@@ -103,19 +191,13 @@
   margin-bottom: 30px;
 }
 
-.clear-cart,
-.save-favorites,
-.apply-favorites,
-.checkout-btn {
+.clear-cart {
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.clear-cart {
   background-color: #e74c3c;
   color: white;
 }
@@ -127,6 +209,16 @@
 .favorites-actions {
   display: flex;
   gap: 10px;
+}
+
+.save-favorites,
+.apply-favorites {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .save-favorites {
@@ -147,40 +239,26 @@
   background-color: #27ae60;
 }
 
+.continue-shopping-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
 .checkout-btn {
-  background-color: #ff6b6b;
+  padding: 12px 20px;
+  background-color: #2ecc71;
   color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .checkout-btn:hover {
-  background-color: #ff5252;
-}
-
-.continue-shopping-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-/* Cart notification message */
-.cart-message {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 4px;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cart-message.show {
-  opacity: 1;
-  transform: translateY(0);
+  background-color: #27ae60;
 }
 
 /* Responsive styling */
@@ -206,8 +284,19 @@
   }
   
   .cart-item-image {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .continue-shopping-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .continue-shopping, 
+  .checkout-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -217,11 +306,7 @@
   }
   
   .cart-item-image {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .remove-item {
-    padding: 6px 8px;
+    width: 60px;
+    height: 60px;
   }
 }
