@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./stylesheets/personal.css">
     <title>Personal & Delivery Details</title>
 </head>
+
 <body>
     <div class="details-title">
         <h1>Personal & Delivery Details</h1>
@@ -36,57 +38,57 @@
         <div class="section-header">
             <h2>Personal Details</h2>
         </div>
-        
+
         <div class="field-container">
             <label for="first-name">First Name</label>
             <input id="first-name" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="last-name">Last Name</label>
             <input id="last-name" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="email">Email Address</label>
             <input id="email" type="email">
         </div>
-        
+
         <div class="field-container">
             <label for="phone">Phone Number</label>
             <input id="phone" type="tel">
         </div>
-        
+
         <!-- Delivery Address Section -->
         <div class="section-header">
             <h2>Delivery Address</h2>
         </div>
-        
+
         <div class="field-container">
             <label for="address-line1">Address Line 1</label>
             <input id="address-line1" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="address-line2">Address Line 2 (Optional)</label>
             <input id="address-line2" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="city">City</label>
             <input id="city" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="state">State/Province</label>
             <input id="state" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="postal-code">ZIP/Postal Code</label>
             <input id="postal-code" type="text">
         </div>
-        
+
         <div class="field-container">
             <label for="country">Country</label>
             <select id="country">
@@ -100,102 +102,89 @@
                 <option value="jp">Japan</option>
             </select>
         </div>
-        
+
         <!-- Delivery Options Section -->
         <div class="section-header">
             <h2>Delivery Options</h2>
         </div>
-        
+
         <div class="field-container delivery-options">
             <div class="option">
                 <input type="radio" id="standard" name="delivery" value="standard" checked>
                 <label for="standard">
-                    <div class="option-name">Standard Delivery</div>
-                    <div class="option-details">
+                    <span class="option-name">Standard Delivery</span>
+                    <span class="option-details">
                         <span class="delivery-time">3-5 Business Days</span>
                         <span class="delivery-cost">FREE</span>
-                    </div>
+                    </span>
                 </label>
             </div>
-            
+
             <div class="option">
                 <input type="radio" id="express" name="delivery" value="express">
                 <label for="express">
-                    <div class="option-name">Express Delivery</div>
-                    <div class="option-details">
+                    <span class="option-name">Express Delivery</span>
+                    <span class="option-details">
                         <span class="delivery-time">1-2 Business Days</span>
                         <span class="delivery-cost">$9.99</span>
-                    </div>
+                    </span>
                 </label>
             </div>
-            
+
             <div class="option">
                 <input type="radio" id="overnight" name="delivery" value="overnight">
                 <label for="overnight">
-                    <div class="option-name">Next Day Delivery</div>
-                    <div class="option-details">
+                    <span class="option-name">Next Day Delivery</span>
+                    <span class="option-details">
                         <span class="delivery-time">Next Business Day</span>
                         <span class="delivery-cost">$19.99</span>
-                    </div>
+                    </span>
                 </label>
             </div>
         </div>
-        
+
         <div class="field-container">
             <label for="delivery-notes">Delivery Notes (Optional)</label>
             <textarea id="delivery-notes" placeholder="Add any special delivery instructions here..."></textarea>
         </div>
-        
+
         <div>
-            <a href="buynow.html">
-            <button class="button-77" role="button">Continue to Payment →</button>
-        </a>
+            <button class="button-77" id="continue-button">Continue to Payment →</button>
         </div>
     </div>
 
-<!-- Replace the order-summary div in personal.html with this: -->
-<div class="order-summary">
-    <h2>Your Order Summary</h2>
-    <div id="summary-items">
-      <!-- Cart items will be displayed here -->
-      <p>Loading your cart items...</p>
+    <!-- Order Summary Section -->
+    <div class="order-summary">
+        <h2>Your Order Summary</h2>
+        <div id="summary-items">
+            <!-- Cart items will be displayed here -->
+            <p>Loading your cart items...</p>
+        </div>
+        <div class="summary-total">
+            <strong>Total:</strong>
+            <span id="summary-total">Rs. 0</span>
+        </div>
     </div>
-    <div class="summary-total">
-      <strong>Total:</strong>
-      <span id="summary-total">Rs. 0</span>
-    </div>
-  </div>
-  
-  <!-- Fix your script references (place at the bottom of the body tag) -->
-  <script src="./Js/details.js"></script>
-  
-  <!-- At the bottom of personal.html, make sure these scripts are properly linked: -->
-  <script src="./Js/details.js"></script>
-  <script src="./Js/personal.js"></script>
 
-    
+    <button id="checkout-btn" class="checkout-btn">BUY NOW</button>
 
-
-    
-    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Handle form submission
-            const continueButton = document.querySelector('.button-77');
-            continueButton.addEventListener('click', function() {
+            const continueButton = document.getElementById('continue-button');
+            continueButton.addEventListener('click', function () {
                 // Redirect to payment page
                 window.location.href = 'buynow.html';
             });
+
+            // Handle checkout button
+            const checkoutButton = document.getElementById('checkout-btn');
+            checkoutButton.addEventListener('click', function() {
+                window.location.href = 'personal.html';
+            });
         });
     </script>
-
-<a href="personal.html">
-    <button id="checkout-btn" >BUY NOW </button>
-  </a>
-  <script src="./Js/deatails.js"></script>
-
-  
-
+    <script src="./Js/deatails.js"></script>
 </body>
-</html>
 
+</html>
