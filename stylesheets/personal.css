@@ -108,6 +108,7 @@ body::before {
 
 .details-form .greydark {
   fill: var(--card-gradient);
+  fill: #1a2980;
 }
 
 /* Form container styling */
