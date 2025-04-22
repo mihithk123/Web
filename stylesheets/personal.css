@@ -288,6 +288,7 @@ select {
   font-size: 16px;
   padding-left: 35px;
   margin-bottom: 5px;
+  display: block;
 }
 
 /* Option details styling */
@@ -440,119 +441,7 @@ input:focus, select:focus, textarea:focus {
   animation: focusAnimation 2s ease infinite;
 }
 
-
-/* Add this to your personal.css file */
-.order-summary {
-  background-color: #f5f5f5;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-.order-summary h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.summary-item {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-
-.summary-item-title {
-  font-weight: bold;
-}
-
-.summary-item-details {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5px;
-  color: #666;
-}
-
-.summary-total {
-  margin-top: 15px;
-  font-size: 18px;
-  text-align: right;
-}
-
-/* Add to personal.css */
-.order-summary {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.order-summary h2 {
-  color: #333;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.summary-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.summary-item-title {
-  font-weight: 500;
-  color: #333;
-  flex: 2;
-}
-
-.summary-item-details {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-  text-align: right;
-}
-
-.summary-item-price {
-  color: #555;
-}
-
-.summary-item-quantity {
-  color: #777;
-  margin-left: 1rem;
-}
-
-.summary-total {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  margin-top: 1rem;
-  border-top: 2px solid #333;
-  font-size: 1.2rem;
-}
-
-.checkout-btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  margin-left: 15px;
-  transition: background-color 0.3s;
-}
-
-.checkout-btn:hover {
-  background-color: #45a049;
-}
-
-
-/* Add these styles to personal.css */
-
+/* Order summary styling */
 .order-summary {
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -561,6 +450,7 @@ input:focus, select:focus, textarea:focus {
   width: 90%;
   max-width: 500px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
 .order-summary h2 {
@@ -610,4 +500,24 @@ input:focus, select:focus, textarea:focus {
 #summary-total {
   font-weight: 700;
   color: #2a59a4;
+}
+
+/* Checkout button styling */
+.checkout-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px auto;
+  display: block;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.checkout-btn:hover {
+  background-color: #45a049;
 }
