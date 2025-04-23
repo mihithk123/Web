@@ -1,6 +1,6 @@
-// Create this as deatails.js and link it in personal.html
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Get cart data from localStorage
+    // cart data from localStorage
     const cartDataString = localStorage.getItem('cartData');
     const cartTotal = localStorage.getItem('cartTotal');
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Display the total
       document.getElementById('summary-total').textContent = cartTotal;
     } else {
-      // If no cart data, show a message
+      
       document.getElementById('summary-items').innerHTML = '<p>No items in cart</p>';
       document.getElementById('summary-total').textContent = 'Rs. 0';
     }

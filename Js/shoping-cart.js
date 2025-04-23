@@ -1,12 +1,12 @@
-// Initialize cart array from localStorage or create empty array
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-// Update cart count in the navbar
+// cart in the navbar
 function updateCartCount() {
   const cartCountElements = document.querySelectorAll('.cart-count');
   cartCountElements.forEach(element => {
-    // Show total quantity of all items in cart
+   
     const totalQuantity = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
     element.textContent = totalQuantity;
   });
@@ -27,14 +27,14 @@ function addToCart(event) {
   const productName = productCard.querySelector('.product-title').textContent;
   const productPrice = productCard.querySelector('.new-price').textContent;
   
-  // Extract numerical price (remove "Rs. " and convert to number)
+  
   const priceValue = parseFloat(productPrice.replace('Rs. ', '').replace(',', ''));
   
-  // Check if item already exists in cart
+
   const existingItem = cart.find(item => item.name === productName);
   
   if (existingItem) {
-    // Increment quantity if item already exists
+    
     existingItem.quantity = (existingItem.quantity || 1) + 1;
   } else {
     // Add new item with quantity 1
@@ -77,7 +77,7 @@ function clearCart() {
   displayCart();
 }
 
-// Save current cart as favorites
+// Save current favorites
 function saveFavorites() {
   favorites = [...cart];
   localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -103,7 +103,7 @@ function applyFavorites() {
   alert('Favorites have been applied to your cart!');
 }
 
-// Calculate and display total cart value
+
 function calculateTotal() {
   const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
   const formattedTotal = `Rs. ${total.toLocaleString()}`;
@@ -116,7 +116,7 @@ function calculateTotal() {
   return formattedTotal;
 }
 
-// Handle quantity change
+
 function handleQuantityChange(event, index) {
   const newQuantity = parseInt(event.target.value);
   if (!isNaN(newQuantity) && newQuantity >= 1) {
@@ -124,7 +124,7 @@ function handleQuantityChange(event, index) {
   }
 }
 
-// Handle quantity button clicks
+
 function handleQuantityButton(index, change) {
   const currentQuantity = cart[index].quantity || 1;
   const newQuantity = currentQuantity + change;
@@ -140,25 +140,25 @@ function displayCart() {
   const emptyCartMessage = document.querySelector('.empty-cart-message');
   const cartActions = document.querySelector('.cart-actions');
   
-  if (!cartTable) return; // Not on cart page
+  if (!cartTable) return; 
   
   const tableBody = cartTable.querySelector('tbody');
   tableBody.innerHTML = '';
   
   if (cart.length === 0) {
-    // Show empty cart message, hide table and actions
+    
     if (emptyCartMessage) emptyCartMessage.style.display = 'block';
     cartTable.style.display = 'none';
     if (cartActions) cartActions.style.display = 'none';
     return;
   }
   
-  // Hide empty cart message, show table and actions
+  
   if (emptyCartMessage) emptyCartMessage.style.display = 'none';
   cartTable.style.display = 'table';
   if (cartActions) cartActions.style.display = 'flex';
   
-  // Update table header to include quantity column
+  
   const thead = cartTable.querySelector('thead tr');
   if (thead && thead.querySelectorAll('th').length === 4) {
     // Insert quantity column header after price
@@ -168,11 +168,11 @@ function displayCart() {
     thead.insertBefore(quantityHeader, priceCell.nextSibling);
   }
   
-  // Add cart items to table
+  
   cart.forEach((item, index) => {
     const row = document.createElement('tr');
     
-    // Calculate item total
+    
     const itemTotal = item.price * (item.quantity || 1);
     const formattedItemTotal = `Rs. ${itemTotal.toLocaleString()}`;
     
@@ -194,7 +194,7 @@ function displayCart() {
   // Calculate and display total
   calculateTotal();
   
-  // Add event listeners for quantity controls and remove buttons
+  
   const quantityInputs = tableBody.querySelectorAll('.quantity-input');
   quantityInputs.forEach(input => {
     const index = parseInt(input.getAttribute('data-index'));
@@ -220,22 +220,22 @@ function displayCart() {
   });
 }
 
-// Event listeners when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', function() {
   // Update cart count on initial load
   updateCartCount();
   
-  // Add event listeners for "Add to Cart" buttons on product page
+
   const addToCartButtons = document.querySelectorAll('.add-to-cart');
   addToCartButtons.forEach(button => {
     button.addEventListener('click', addToCart);
   });
   
-  // Display cart if on cart page
+  
   if (document.querySelector('.cart-section')) {
     displayCart();
     
-    // Add event listeners for cart actions
+    
     const clearCartButton = document.getElementById('clear-cart');
     if (clearCartButton) {
       clearCartButton.addEventListener('click', clearCart);
