@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    const submitButton = document.querySelector('.buynow');
+    const submitButton = document.querySelector('.button-77');
     
     
     submitButton.addEventListener('click', function(e) {
