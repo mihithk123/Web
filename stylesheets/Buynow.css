@@ -133,9 +133,7 @@ body::before {
 }
 
 /* Color for the dark parts of the card */
-.creditcard .greydark {
-  fill: var(--card-gradient);
-}
+
 
 /* Form container with glass morphism effect */
 .form-container {
