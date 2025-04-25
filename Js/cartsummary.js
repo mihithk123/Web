@@ -37,7 +37,7 @@ function prepareCartDataForCheckout() {
 
 
 function displayOrderSummary() {
-  console.log("Displaying order summary"); // Debugging
+  console.log("Displaying order summary"); 
 
   // cart data from localStorage
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -73,16 +73,16 @@ function displayOrderSummary() {
     }
   }
 
-  //summary elements
+ 
   const summaryItemsDiv = document.getElementById('summary-items');
   const summaryTotalSpan = document.getElementById('summary-total');
 
   if (!summaryItemsDiv || !summaryTotalSpan) {
-    console.log("Summary elements not found"); // Debugging
+    console.log("Summary elements not found"); 
     return;
   }
 
-  // Clear existing content
+ 
   summaryItemsDiv.innerHTML = '';
 
   if (cartData.length === 0) {
@@ -91,7 +91,7 @@ function displayOrderSummary() {
     return;
   }
 
-  // Display each item in the summary
+  
   cartData.forEach(item => {
     const itemDiv = document.createElement('div');
     itemDiv.className = 'summary-item';
@@ -109,5 +109,5 @@ function displayOrderSummary() {
 
   // Display the total
   summaryTotalSpan.textContent = cartTotal;
-  console.log("Summary displayed with total:", cartTotal); // Debugging
+  console.log("Summary displayed with total:", cartTotal);
 }

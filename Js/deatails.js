@@ -1,9 +1,8 @@
-// This script handles cart data display on the personal details page
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Display cart summary on personal details page
-  displayOrderSummary();
   
-  // Handle checkout button on cart page (if present)
+  
+  
   const checkoutBtn = document.getElementById('checkout-btn');
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', function() {
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Function to prepare cart data before redirecting to personal details
+
 function prepareCartDataForCheckout() {
   // Get cart data from localStorage
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -29,12 +28,12 @@ function prepareCartDataForCheckout() {
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   const formattedTotal = `Rs. ${total.toLocaleString()}`;
   
-  // Save formatted data to localStorage
+  
   localStorage.setItem('cartData', JSON.stringify(formattedCartData));
   localStorage.setItem('cartTotal', formattedTotal);
 }
 
-// Function to display order summary on personal details page
+
 function displayOrderSummary() {
   console.log("Displaying order summary"); // Debugging
   
