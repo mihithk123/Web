@@ -1,10 +1,10 @@
-// Keep track of which image is currently showing
+
 var currentSlide = 0;
 
 // Get all carousel images
 var slides = document.querySelectorAll('.carousel-image');
 
-// Function to display a specific slide
+
 function showSlide(index) {
   // Loop through all slides
   for (var i = 0; i < slides.length; i++) {
@@ -24,7 +24,7 @@ function nextSlide() {
   // Increase the current slide index
   currentSlide = currentSlide + 1;
   
-  // If we've gone past the last slide, go back to the first one
+
   if (currentSlide >= slides.length) {
     currentSlide = 0;
   }
@@ -38,7 +38,7 @@ function prevSlide() {
   // Decrease the current slide index
   currentSlide = currentSlide - 1;
   
-  // If we've gone before the first slide, go to the last one
+ 
   if (currentSlide < 0) {
     currentSlide = slides.length - 1;
   }
